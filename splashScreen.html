@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="4; url=home.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDG 14 - Life Below Water</title>
+ 
+  <style>
+ 
+    body {
+      background-color: #020d1a;
+      background-image: url('https://i.pinimg.com/originals/0e/f4/a0/0ef4a006bb086f3d5288615f5b43c2a7.jpg');
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      color: #e8f4fd;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+ 
+    /*fills the screen */
+    .overlay {
+      background-color: rgba(1, 18, 40, 0.80);
+      min-height: 100vh;
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+ 
+    h1 {
+      font-size: 48px;
+      color: #5bb8f5;
+      margin-bottom: 10px;
+    }
+ 
+    h2 {
+      font-size: 16px;
+      font-weight: normal;
+      color: #a8d8f0;
+      margin-bottom: 30px;
+    }
+ 
+    p {
+      font-size: 14px;
+      color: #a8d8f0;
+      margin-bottom: 6px;
+    }
+ 
+    hr {
+      width: 80px;
+      border: 1px solid #1a7fc4;
+      margin: 20px auto;
+    }
+ 
+    /* loader bar */
+    .loader-box {
+      width: 220px;
+      height: 6px;
+      background-color: #0a2a4a;
+      margin: 20px auto;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+ 
+    .loader-fill {
+      height: 6px;
+      width: 0%;
+      background-color: #1a7fc4;
+      animation: fill 4s linear forwards;
+      border-radius: 4px;
+    }
+ 
+    @keyframes fill {
+      from { width: 0%; }
+      to   { width: 100%; }
+    }
+ 
+    /* countdown text */
+    #countdown {
+      font-size: 14px;
+      color: #5bb8f5;
+      margin-bottom: 20px;
+    }
+ 
+    /* skip button */
+    .skip {
+      background-color: #0d4f8c;
+      color: #e8f4fd;
+      border: 1px solid #1a7fc4;
+      padding: 10px 28px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+ 
+    .skip:hover {
+      background-color: #1a7fc4;
+    }
+ 
+  </style>
+</head>
+ 
+<body>
+ 
+  <div class="overlay">
+ 
+    <!-- Website Title -->
+    <h1>Life Below Water</h1>
+ 
+    <!-- Mission Statement -->
+    <h2>
+      Securing the Future of Our Oceans
+    </h2>
+ 
+    <hr>
+ 
+    <!-- Group Members -->
+    <p><b>Our Team</b></p>
+    <p>Dinitha Ranketh</p>
+    <p>Kumaresan Piragatheesan</p>
+    <p>A M Prabash Tharinda Buddhadasa</p>
+    <p>Niranjan Miththujan</p>
+ 
+    <hr>
+ 
+    <!-- CSS Loader -->
+    <div class="loader-box">
+      <div class="loader-fill"></div>
+    </div>
+ 
+    <!-- Countdown Timer -->
+    <p id="countdown">Entering site in 4...</p>
+ 
+    <!-- Skip Button -->
+    <button class="skip" onclick="skipIntro()">Skip Intro</button>
+ 
+  </div>
+ 
+  <!-- Countdown, JavaScript -->
+  <script>
+    var count = 4;
+    var timer = setInterval(function() {
+      count = count - 1;
+      document.getElementById("countdown").innerHTML = "Entering site in " + count + "...";
+      if (count == 0) {
+        clearInterval(timer);
+      }
+    }, 1000);
+ 
+    function skipIntro() {
+      clearInterval(timer);
+      window.location.href = "home.html";
+    }
+  </script>
+ 
+</body>
+</html>

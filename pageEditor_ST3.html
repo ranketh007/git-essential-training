@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor Student - provide your student name</title>
+
+    <link rel="stylesheet" href="css/pageEditor_validator.css"> <!-- External CSS link -->
+
+</head>
+<body>
+    
+    <!-- Update the header and the footer to be consistent with the rest of the pages you implemented -->
+
+    <header id="top">
+        <img src="resources/logo.png" alt="Site Logo" width="330" height="40">
+        <nav>
+            <ul>
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="ais.html">&nbsp; AIS &nbsp;</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="userprofile.html">User Profile</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="stud">
+        <h2>Prabash Tharinda, Team G3, Student 3</h2>
+    </section>
+
+    <div class="container">
+        <!-- Main content area -->
+        <main>
+
+            <!-- Update those first three sections for the pages you were responsible to implement -->
+
+            <section>
+                <h2 id="feedback">Feedback page</h2>
+                    <h3>Technical Description</h3>
+                        <p>The feedback page for our website uses semantic HTML elements to organize the content clearly and improve its accessibility as well.
+                            the &lt;header&gt; element contains the logo of the website and the navigation bar,
+                            the &lt;nav&gt; tag is used to group the navigation links to improve structure. The &lt;main&gt; tag holds
+                            the primary content ensuring clear seperation. &lt;section&gt; used to group program cards. each program is
+                            placed in a section with classes as <strong>card</strong> and <strong>program-card</strong>.
+                            &lt;button&gt; element provides interactive actions for the "Join us" and "Learn More" parts.
+                            A &lt;form&gt; was used for user input collection &lt;fieldset&gt; and &lt;legend&gt; were used
+                            to group personal details and feedback details, &lt;label&gt; tags were used to link inputs for clear
+                            field descriptions and &lt;input&gt; , &lt;textarea&gt; , &lt;select&gt; are used to collect user data
+                            &lt;span&gcy; elements with the class error are used to display validation messages.
+                            CSS Used : display: flex - used in .programs class to create horizontal scrolling layout for program cards.
+                            overflow-x: auto smooth scrolling, margin and padding used to create spacing. To ensure a consistent color theme
+                            background: linear-gradient(#00a8e8, #003459) was used to match the theme. rounded corners (border-radius)
+                            was applied to cards, buttons and forms for detail. box-shadow to create depth. :hover effects were applied
+                            to provide interactivity, ::-webkit-scrollbar used to style the scrollbar.
+                            Use of javascript for form validation. ensures correct inputs for name, email and category, real time character counter
+                            and error message displays were done using javascript.   
+                        </p> 
+                    
+                    <h3>Accessibility</h3>
+                        <p>Use of semantic HTML, labels and inputs for form accessibility, fieldset and legend to group
+                            inputs, error messages for validation use of alt text for all images, following a consistent theme through out the whole
+                            pages, interactive feedback - form validation, real time character count, success message.
+                        </p>
+                    
+                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
+                        <p><a href="validation_ST3.html#feedbackVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+                    <h3>Link to the page</h3>
+                        <p><a href="feedback.html">Feedback page link.</a></p>
+            </section>
+
+            <section>
+                <h2 id="team">Team Page</h2>
+                    <h3>Technical Description</h3>
+                        <p>
+                          &lt;header&gt; element is used to contain the logo and navigation bar &lt;main&gt; holds the
+                          main content of the page &lt;section&gt; is used to display each members with the class team-card.
+                          &lt;img&gt; tags are used for the image showcase. CSS: (display:flex) is used in .team-container to
+                          align team cards (position:relative and absolute) creates the overlay effect on each card.
+                          .team-overlay is hidden using transform: translateY(100%) and is revealed on hover.
+                          (:hover) and (:focus) were used to create smooth animations. Transistions for smooth overlay.  
+                        </p>
+                    <h3>Accessibility</h3>
+                        <p>
+                            Use of semantic HTML elements. Each team card includes tabindex="0" allow user for keyboard
+                            navigation alt texts per team member image for identification. :focus styling highlights the
+                            selected card for user ease of access.
+                        </p>
+                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
+                        <p><a href="validation_ST3.html#teamVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+                        
+                    <h3>Link to the page</h3>
+                        <p><a href="team.html">Link to the Team Page</a></p>
+            </section>
+
+            <section>
+                <h2 id="content">Content Page</h2>
+                    <h3>Technical Description</h3>
+                        <p>
+                            The &lt;header&gt; contains the logo and navigation menu. &lt;main&gt; section holds all the core
+                            content, The content is devided using &lt;section&gt; elements as (#content, #content2, #content3, #content4)
+                            &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt; are used for clear information titles. &lt;ul&gt; are used for key point
+                            presentation. &lt;a href="content"&gt; allows user to jump between sections. @media ensures images resize properly
+                            on smaller screens due to large image usage.
+                        </p> 
+
+                    <h3>Accessibility</h3>
+                        <p>
+                            Use of semantic HTML elements helps readers understand the layout. alt texts describe each image for user ease.
+                            Use of @media for device responsiveness.
+                        </p>
+
+                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
+                        <p><a href="validation_ST3.html#content3Val">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+                        
+                    <h3>Link to the page</h3>
+                        <p><a href="content3.html">Include a link to the actual page you describe.</a></p>
+            </section>
+
+            <section>
+                <h2 id="challenge"> Challenges and Lessons Learned</h2>
+                    <p>Main challenges faced were designing the web page using necessary CSS and Use of JavaScript for form validation. While adapting to these hardships I was able to
+                        learn correct jacascript implementations and CSS usage for web page designing.
+                    </p> 
+            </section>
+
+            <section>
+                <h2 id="compliance"> Compliance</h2>
+                    <p>The content of the webpages were designed under the compliance Janet Regulations. Use of Semantic HTML tags and alt tags were used for images to clarfiy each part.</p> 
+
+                    
+            </section>
+
+            <section>
+                <h2 id="compliance"> Group Meetings and Individual Contribution Log</h2>
+                    <p>Include a Group Meetings and Contribution Log that documents your engagement with group work.</p> 
+                    Requirements:
+                        <ul> 
+                            <li>A minimum of six (6) group meetings must be recorded.</li>
+                            <li>Each student must provide their own account of the meetings.</li>
+                            <li>The log must focus on individual contribution, not just group activity.</li>
+                        </ul>
+                        <p>Feel free to follow the example table structure below:</p>
+
+                        <table >
+    
+                            <thead>
+                                <tr>
+                                    <th colspan="6">Group Meetings and Contribution Log</th>
+                                </tr>
+                                <tr>
+                                    <th>Meeting</th>
+                                    <th>Date &amp; Time</th>
+                                    <th>Format</th>
+                                    <th>Objective</th>
+                                    <th>Attended</th>
+                                    <th>Your Individual Contribution</th>
+                                </tr>
+                            </thead>
+                        
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>5 Feb 2026</td>
+                                    <td>Online</td>
+                                    <td>Agree SDG and assign roles</td>
+                                    <td>Yes</td>
+                                    <td>I agreed to take responsibility for the Feedback Page and Team Page.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>2</td>
+                                    <td>12 Feb 2026</td>
+                                    <td>Online</td>
+                                    <td>Review Home Page design</td>
+                                    <td>Yes</td>
+                                    <td>I agreed to our team leaders choices of color palletes and Global.CSS</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>3</td>
+                                    <td>19 Feb 2026</td>
+                                    <td>Online</td>
+                                    <td>Review gallery thumbnail content in the Home Page.</td>
+                                    <td>Yes</td>
+                                    <td>Through an example of the team leader I got an idea on how to build the pages.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>4</td>
+                                    <td>26 Feb 2026</td>
+                                    <td>Online</td>
+                                    <td>Review the finished Home page, discuss the progress of other pages</td>
+                                    <td>Yes</td>
+                                    <td>Discussed about issues that was present within my Feedback page with the members.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>5</td>
+                                    <td>19 March 2026</td>
+                                    <td>Online</td>
+                                    <td>Review the image resources to be used in the pages, and discuss the overall progress.</td>
+                                    <td>Yes</td>
+                                    <td>Recieved recomendations for the images needed for the team page.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>6</td>
+                                    <td>20 March 2026</td>
+                                    <td>Online</td>
+                                    <td>Discuss final adjustments to be made.</td>
+                                    <td>Yes</td>
+                                    <td>Dicussed the final details with the team members.</td>
+                                </tr>
+                        
+                            </tbody>
+                        
+                        </table>
+                    
+            </section>
+
+            <section>
+                <h2 id="ref">References</h2>
+                <p>Provide links to resources you used following a consistent format (e.g., APA, MLA, or a simplified style). For example:<br><br>
+                    <ul class="ref">
+                        <li>Request for images<i>Default browser</i> Available at: <a href="https://mirpurifoundation.org/mirpuri-news/news/world-oceans-day-2020/">An image for a sustainable ocean</a> (Last accessed: 10 MAR 2026).</li>
+                        <li>Request for images<i>Default browser</i> Available at: <a href="https://www.nationalgeographic.com/science/article/scientists-work-to-save-coral-reefs-climate-change-marine-parks">An image for coral reefs</a> (Last accessed: 10 MAR 2026).</li>
+                        <li>Request for images<i>Default browser</i> Available at: <a href="https://www.worldwildlife.org/our-work/oceans/sustainable-seafood/wild-caught-seafood/overfishing/">An image for Overfishing</a> (Last accessed: 10 MAR 2026).</li>
+                        <li>Request for images<i>Default browser</i> Available at: <a href="https://ionexchangeglobal.com/marine-pollution-sources-impacts-and-prevention/">An image for Marine Pollution</a> (Last accessed: 10 MAR 2026).</li>
+                        <li>Request for images<i>Default browser</i> Available at: <a href="https://www.google.com/imgres?q=an%20image%20of%20a%20beach%20clean%20up&imgurl=https%3A%2F%2Fi0.wp.com%2Fwww.noozhawk.com%2Fwp-content%2Fuploads%2F2024%2F04%2Fsr-beach-scaled.jpeg%3Ffit%3D780%252C520%26quality%3D89%26ssl%3D1&imgrefurl=https%3A%2F%2Fwww.noozhawk.com%2Fbeach-cleanup-initiatives-for-summer-conservation%2F&docid=FiJWUEyErhCj5M&tbnid=97LFgaI7Y43yhM&vet=12ahUKEwiZoerrt8GTAxUbXWwGHdt7DngQnPAOegQIGRAB..i&w=779&h=520&hcb=2&ved=2ahUKEwiZoerrt8GTAxUbXWwGHdt7DngQnPAOegQIGRAB">An image of beach cleanup</a> (Last accessed: 21 Feb 2026).</li>
+                        <li>Request for images<i>Default browser</i> Available at: <a href="https://news.mongabay.com/2019/10/the-ocean-cleanup-successfully-collects-ocean-plastic-aims-to-scale-design/">An image for plastic cleanup</a> (Last accessed: 21 Feb 2026).</li>
+                        <li>Request for images<i>Default browser</i> Available at: <a href="https://www.google.com/imgres?q=an%20image%20protecting%20corals&imgurl=https%3A%2F%2Fnewsroom.wcs.org%2FPortals%2F164%2FImages%2F2_1_Darling-Scientist1-IMG_5141.jpg&imgrefurl=https%3A%2F%2Fnewsroom.wcs.org%2FNews-Releases%2FarticleType%2FArticleView%2FarticleId%2F12877%2FA-NEW-HOPE-FOR-CORAL-REEFS-Largest-Ever-Study-of-Coral-Communities-Unlocks-Global-Solution-to-Save-Reefs.aspx&docid=QevB7gjsWQ3Q5M&tbnid=yThm2stj9nCT8M&vet=12ahUKEwimiJKguMGTAxVkRWcHHQU_JkkQnPAOegQIIBAB..i&w=600&h=400&hcb=2&ved=2ahUKEwimiJKguMGTAxVkRWcHHQU_JkkQnPAOegQIIBAB">An image for coral protection</a> (Last accessed: 21 Feb 2026).</li>
+                        <li>Request for images<i>Default browser</i> Available at: <a href="https://www.freepik.com/free-photos-vectors/raising-awareness-on-ocean-issues">An image of ocean awareness</a> (Last accessed: 21 Feb 2026).</li>
+                    </ul>
+            </section>
+
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <!-- Sidebar area -->
+        <aside>
+            <h3>Core pages developed:</h3>
+
+        <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
+            <ul class="top-level-ul">
+                <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
+                
+                    
+                <li>Student 3</li>
+                    <ul>
+                        <li><a href="feedback.html">Feedback</a> </li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="content3.html">Content</a></li>
+                    </ul>
+                
+                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+                <li><a href="#group">Group Meetings and Individual Contribution Log</a></li>
+                <li><a href="#ref">References</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <img src="resources/logofooter.png" alt="Site Logo" width="300" height="70"><br>
+
+        <div class="footcols">
+            <h4>Prabash Tharinda | </h4>
+            <a href="validation_ST3.html">Validation Page</a>
+            <a href="pageEditor_ST3.html">Page Editor</a>
+        </div>
+    </footer>
+</body>
+</html>

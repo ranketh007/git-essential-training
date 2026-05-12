@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Team Page</title>
+        <link rel="stylesheet" href="Global.css">
+        <style>
+
+            .bg-image{
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+
+                background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url(background.jpg);
+
+                background-size: cover;
+                background-position: center;
+
+                z-index: -1;
+
+            }
+
+            main{
+                margin-top: 0px;
+                min-height: 77vh;
+                background-color:#003459
+            }
+
+            .team-title{
+                font-family: poppins;
+                color: white;
+                text-align: center;
+                font-size: 50px;
+                margin-top: 0px;
+            }
+
+            .team-container{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 30px;
+                margin-left: 40px;
+                margin-right: 40px;
+                height: 50vh;
+                margin-bottom: 0px;
+            }
+
+            .team-card{
+                width: 250px;
+                position: relative;
+                overflow: hidden;
+                border-radius: 15px;
+                cursor: pointer;
+                outline: none;
+            }
+
+            .team-card img{
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+                display: block;
+            }
+
+            .team-overlay{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+
+                background: linear-gradient(rgba(0,0,0,0.7), #003459);
+                color: white;
+
+                padding: 15px;
+                transform: translateY(100%);
+                transition: 0.4s;
+            }
+
+            .team-card:hover .team-overlay,
+            .team-card:focus .team-overlay{
+                transform: translateY(0);
+            }
+
+            .team-card:focus{
+                box-shadow: 0 0 10px #00a8e8;
+            }
+
+            .team-overlay h3{
+                margin: 5px 0;
+            }
+
+            .team-overlay p{
+                font-size: 14px;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <header>
+            <section class="bg-image"></section>
+            <img src="resources/logo.png" alt="Site Logo" width="330" height="40">
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="ais.html">AIS</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="userprofile.html">User Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html" class="active">Our Team</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h1 class="team-title">Meet Our Team</h1>
+            <div class="team-container">
+
+                <!-- Member-1 "Dinitha"-->
+                <section class="team-card" tabindex="0">
+                    <img src="resources/dinitha.jpg" alt="Team Member 1 - Dinihta Ranketh">
+
+                    <div class="team-overlay">
+                        <h3>Dinitha Ranketh</h3>
+                        <p><strong>Role:</strong> Student 1</p>
+                        <p><strong>Pages:</strong>Home Page and Gallery.</p>
+                        <p>The leader of our team who was responsible of the core parts of our webpage.</p>
+                    </div>
+                </section>
+
+                <!-- Member-2 "Piragatheesan"-->
+                 <section class="team-card" tabindex="0">
+                    <img src="resources/piragatheesan.jpg" alt="Team Member 2 - Piragatheesan Kumarasen">
+
+                    <div class="team-overlay">
+                        <h3>Piragatheesan Kumarasen</h3>
+                        <p><strong>Role:</strong>Student 2</p>
+                        <p><strong>Pages:</strong>Splash Screen and AIS</p>
+                        <p>Student number 2 who has assigned to create our Splash screen and AIS.</p>
+
+                    </div>
+                 </section>
+
+                 <!-- Member-3 "Prabash"-->
+                  <section class="team-card" tabindex="0">
+                    <img src="resources/prabash.jpg" alt="Team Member 3 - Prabash Tharinda">
+
+                    <div class="team-overlay">
+                        <h3>Prabash Tharinda</h3>
+                        <p><strong>Role:</strong>Student 3</p>
+                        <p><strong>Pages:</strong>Feedback page and Team Page.</p>
+                        <p>Student number 3 who was responsible in creating the Feedback and Team page.</p>
+                    </div>
+                  </section>
+
+                  <!--Member-4 "Mithujan"-->
+                  <section class="team-card" tabindex="0">
+                    <img src="resources/mithujan.jpg" alt="Team Member 4 - Mithujan">
+
+                    <div class="team-overlay">
+                        <h3>Mithujan</h3>
+                        <p><strong>Role:</strong>Student 4</p>
+                        <p><strong>Pages:</strong>User Profile and Site map</p>
+                        <p>Student number 4 who was assigned to create the User profile and Site map.</p>
+
+                    </div>
+                  </section>
+            </div>
+        </main>
+
+    <footer>
+        <img src="resources/logofooter.png" alt="Site Logo" width="300" height="70"><br>
+
+        <div class="footcols">
+            <h4>Prabash Tharinda | </h4>
+            <a href="validation_ST3.html">Validation Page</a>
+            <a href="pageEditor_ST3.html">Page Editor</a>
+        </div>
+    </footer>
+    </body>
+</html>

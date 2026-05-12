@@ -1,0 +1,205 @@
+html, body{
+    height: 100%;
+    margin: 0;
+}
+
+body{
+    background-image: url(resources/background.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: poppins;
+}
+
+header img{
+    float: left;
+    margin-top: 2px;
+    padding-left: 1%;
+}
+
+/*Navigation Bar Properties*/
+nav ul{
+    list-style: none; 
+    background-color: #00171f;
+    margin-top: 0%;
+    text-align: right;
+    padding-right: 10%;
+    }
+
+nav ul li{
+    display: inline-block;
+    padding-right: 2.5%;
+}
+
+nav ul li a{
+    display: block;
+    padding: 14px;
+    text-decoration: none; 
+    color: #00a8e8;
+    font-size: medium;
+    transition: 0.3s;
+}
+nav ul li a:hover{
+    color: #ffffff;
+    background: linear-gradient(#00a8e8, #003459);
+}
+
+.active{text-decoration: underline;}
+
+/*Other Element Properties*/
+main{
+    min-height: 42vh;
+}
+
+img{
+    max-width: 100%;
+}
+
+/*Main content element properties of the Gallery page*/
+.contentbox{
+    margin-left: 25%;
+    width: 50%;
+    height: 400px;
+    transition: 0.5s;
+    position: relative;
+    }
+
+.background{
+    background-position:center;
+    background-size: cover;
+    position: absolute;
+    inset: 0;
+}
+
+.background img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent; 
+}
+
+.contentboxContent{
+    position: relative;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.contentbox h2{
+    color: #ffffff;
+    font-family: poppins;
+    font-size: 30px;
+    margin-left: 35%;
+    padding-top: 5%;
+    text-align: justify;
+}
+
+.contentbox h3{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 50px;
+    margin-left: 20%;
+    text-align: justify;
+    font-style: italic;
+    font-family: Georgia;
+}
+
+
+.contentboxExpanded{
+    margin-left: 2.5%;
+    width: 99%;
+    cursor: pointer;
+    z-index: 1;
+    }
+
+.expandedContent{
+    padding: 0;
+    color: #ffffff;
+    font-family: Georgia;
+}
+
+.expandedContent h3{
+    font-size: 50px;
+    text-align: center;
+    font-style: normal;
+    margin-left: 0;
+}
+
+.expandedContent p{
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-top: 0;
+    font-size: 25px;
+}
+
+.expandedContent ul{
+    list-style:square;
+    margin-left: 2%;   
+    font-size: 20px;
+}
+
+.expandedContent label{
+    margin-left: 5%;
+    font-style: italic;
+}
+
+.expandedContent .fontSelect{
+    margin-left: 5%;
+    margin-top: 0; 
+    color: #ffffff;
+    background-color: #00a8e8;   
+}
+
+.expandedContent button[type="submit"]{
+    color:#00a8e8;    
+    background-color: #00171f;
+    margin-left: 8.5%;
+    margin-top: 1%;
+}
+
+.expandedContent button[type="submit"]:hover{
+    color:#00171f;    
+    background-color: #00a8e8;
+}
+
+/*Footer Properties*/
+footer{
+    background-color: #00171f;
+    padding-bottom: 5px;
+    margin-bottom: 0;
+    position: relative;
+
+}
+
+.footcols{
+    display: flex;
+    gap: 50px;
+}
+
+.footcols h4{
+    color: #00a8e8;
+    padding-bottom: 8px;
+    padding-top: 1%;
+    margin-left: 5%;
+}
+
+.footcols a{
+    color: #00a8e8;
+    padding-bottom: 8px;
+    padding-top: 2.8%;
+    text-decoration: none;
+
+}
+
+
+footer img{
+    float: left;
+    padding-top: 1%;
+    margin-left: 2%;
+}

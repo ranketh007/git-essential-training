@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gallery</title>
+    <link rel="stylesheet" href="Gallery_CSS.css">
+
+</head>
+<body>
+    <!--Header Tag Content- Not to be Edited-->
+    <header>
+        <img src="resources/logo.png" alt="Site Logo" width="300" height="40">
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="ais.html">&nbsp; AIS &nbsp;</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="userprofile.html">User Profile</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contentbox">
+            <div class="background">
+                <img src="resources/corals2.jpg" alt="Marine Life with Corals">
+                <div class="overlay"></div>
+            </div>
+            <section class="contentboxContent">
+                <h2>Show More on</h2>
+                <h3>Marine Biodiversity</h3>
+            </section>
+        </div>
+
+        <div class="contentbox">
+            <div class="background">
+                <img src="resources/wasterelease.jpg" alt="Pollution of water with waste materials">
+                <div class="overlay"></div>
+            </div>        
+            <section class="contentboxContent">
+                <h2>Show More on</h2>
+                <h3>Pollution Awareness</h3>
+            </section>
+        </div>
+
+        <div class="contentbox">
+            <div class="background">
+                <img src="resources/fishing.jpg" alt="Fishing on a traweler">
+                <div class="overlay"></div>
+            </div>
+            <section class="contentboxContent">
+                <h2>Show More on</h2>
+                <h3>Sustainable Fishing</h3>
+            </section>
+        </div>
+
+        <div class="contentbox" style="margin-bottom: 1%;">
+            <div class="background">
+                <img src="resources/community.jpg" alt="Effective Community Actions">
+                <div class="overlay"></div>
+            </div>
+            <section class="contentboxContent">
+                <h2>Show More on</h2>
+                <h3>Conservation Efforts</h3>
+            </section>
+        </div>
+
+    </main>
+
+    <footer>
+        <img src="resources/logofooter.png" alt="Site Logo" width="300" height="70"><br>
+
+        <div class="footcols">
+            <h4>Dinitha Ranketh | </h4>
+            <a href="validation_ST1.html">Validation Page</a>
+            <a href="pageEditor_ST1.html">Page Editor</a>
+        </div>
+    </footer>
+
+    <script>
+        const gallery = document.querySelectorAll(".contentbox");
+
+        gallery.forEach(function(box){
+            const background = box.querySelector(".background");
+            const content = box.querySelector(".contentboxContent");
+
+            box.addEventListener("mouseenter", function(){
+                background.style.filter = "blur(3px)";
+                background.style.cursor = "pointer";
+                content.style.opacity = "1";
+                content.style.cursor = "pointer";
+            });
+
+            box.addEventListener("mouseleave", function(){
+                background.style.filter = "none";
+                content.style.opacity = "0";
+            });   
+
+        });
+
+    </script>
+
+    <script>
+        const gallery1 = document.querySelector(".contentbox:nth-child(1)");
+        const background = gallery1.querySelector(".background");
+        const content = gallery1.querySelector(".contentboxContent");
+        background.style.filter= "none";
+        background.style.opacity= "1";
+        gallery1.addEventListener("click", function(){
+            this.classList.toggle("contentboxExpanded");
+            if(this.classList.contains("contentboxExpanded")){
+                gallery1.style.width = "95%";
+                background.style.filter = "none";
+                content.innerHTML=`
+                <section class="expandedContent">
+                    <h3>The Rich Diveristy of Ocean Life</h3>
+                    <p>Being home to an incredibly variety of life, including from planktons to massive blue whales, marine ecosystems play a crucial role in maintaining
+                        ecological balance. A popular ecosystem would be coral reefs.</p>
+                    <ul>
+                        <li>Coral reefs provide shelter and breeding grounds</li>
+                        <li>Oceans regulate global climate</li>
+                        <li>Marine species contribute to food security</li>
+                    </ul>
+                    <label for="selected">Customize the Font Style</label>
+                    <select class="fontSelect" id="selected">
+                        <option value="Georgia">Default (Georgia)</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Poppins">Poppins</option>
+                    </select><br>
+                    <label for="dark">Configure Theme</label>
+                    <button type="submit" id="dark">Dark Mode</button>
+                    <button type="submit" value="Default" id="default">Default</button>
+                </section>`;
+
+                const fontDrop = content.querySelector(".fontSelect");
+
+                /*Selectors targetting paragraphs, list elements and headings*/
+                const head3 = gallery1.querySelector("h3");
+                const para = gallery1.querySelector("p");
+                const listElement = gallery1.querySelector("ul");
+
+                fontDrop.addEventListener("click", function(event){
+                    event.stopPropagation(); /*Stops the expanded content from collapsing when clicking on interactive elements*/
+
+                    head3.style.fontFamily = this.value;
+                    para.style.fontFamily = this.value;
+                    listElement.style.fontFamily = this.value;
+                });
+
+                const darkbtn = content.querySelector("#dark");
+                const overlay = gallery1.querySelector(".overlay");
+
+                darkbtn.addEventListener("click", function(event){
+                    event.stopPropagation();
+
+                    overlay.style.backgroundColor = "#00171f";
+                });
+
+                const defaultbtn = content.querySelector("#default");
+
+                defaultbtn.addEventListener("click", function(){
+                    event.stopPropagation();
+
+                    overlay.style.backgroundColor = "transparent";
+                });
+
+            }else{
+                content.innerHTML = `
+                <h2>Show More on</h2>
+                <h3>Marine Biodiversity</h3>`;
+                gallery1.style.width = "50%";
+                background.style.backgroundColor = "none";
+            }
+        });
+
+    </script>
+
+    <script>
+        const gallery2 = document.querySelector(".contentbox:nth-child(2)");
+        const background2 = gallery2.querySelector(".background");
+        const content2 = gallery2.querySelector(".contentboxContent");
+        background.style.filter= "none";
+        background.style.opacity= "1";
+        gallery2.addEventListener("click", function(){
+            this.classList.toggle("contentboxExpanded");
+            if(this.classList.contains("contentboxExpanded")){
+                gallery2.style.width = "95%";
+                content2.innerHTML=`
+                <section class="expandedContent">
+                    <h3>Understanding the Impact of Ocean Pollution</h3>
+                    <p>Various activities of humans have led to the addition of harmful substances to the ocean,
+                        such as plastic, chemicals, and waste from factories. These substances have a negative effect on marine life and can enter the food chain for humans.</p>
+                    <ul>
+                        <li>Plastic waste harms marine life</li>
+                        <li>Oil spills destroy habitats</li>
+                        <li>Pollution disrupts entire ecosystems</li>
+                    </ul>
+                    <label for="selected">Customize the Font Style</label>
+                    <select class="fontSelect" id="selected">
+                        <option value="Georgia">Default (Georgia)</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Poppins">Poppins</option>
+                    </select><br>
+                    <label for="dark">Configure Theme</label>
+                    <button type="submit" id="dark">Dark Mode</button>
+                    <button type="submit" value="Default" id="default">Default</button>
+                </section>`;
+
+                const fontDrop = content2.querySelector(".fontSelect");
+
+                const head3 = gallery2.querySelector("h3");
+                const para = gallery2.querySelector("p");
+                const listElement = gallery2.querySelector("ul");
+
+                fontDrop.addEventListener("click", function(event){
+                    event.stopPropagation(); 
+
+                    head3.style.fontFamily = this.value;
+                    para.style.fontFamily = this.value;
+                    listElement.style.fontFamily = this.value;
+                });
+
+                const darkbtn = content2.querySelector("#dark");
+                const overlay = gallery2.querySelector(".overlay");
+
+                darkbtn.addEventListener("click", function(event){
+                    event.stopPropagation();
+
+                    overlay.style.backgroundColor = "#00171f";
+                });
+
+                const defaultbtn = content2.querySelector("#default");
+
+                defaultbtn.addEventListener("click", function(){
+                    event.stopPropagation();
+
+                    overlay.style.backgroundColor = "transparent";
+                });
+
+
+            }else{
+                content2.innerHTML = `
+                <h2>Show More on</h2>
+                <h3>Pollution Awareness</h3>`;
+                gallery2.style.width = "50%";
+            }
+        });
+
+    </script>
+
+    <script>
+        const gallery3 = document.querySelector(".contentbox:nth-child(3)");
+        const background3 = gallery3.querySelector(".background");
+        const content3 = gallery3.querySelector(".contentboxContent");
+        background.style.filter= "none";
+        background.style.opacity= "1";
+        gallery3.addEventListener("click", function(){
+            this.classList.toggle("contentboxExpanded");
+            if(this.classList.contains("contentboxExpanded")){
+                gallery3.style.width = "95%";
+                content3.innerHTML=`
+                <section class="expandedContent">
+                    <h3>Protecting Fish Populations for the Future</h3>
+                    <p>Sustainable fishing promotes healthy and productive fish populations. It entails fishing in a way that does not 
+                        harm the environment and overexploit resources to support the Sustainable Development Goal.</p>
+                    <ul>
+                        <li>Avoid overfishing to maintain balance</li>
+                        <li>Use eco-friendly fishing gear</li>
+                        <li>Support local and responsible fisheries</li>
+                    </ul>
+                    <label for="selected">Customize the Font Style</label>
+                    <select class="fontSelect" id="selected">
+                        <option value="Georgia">Default (Georgia)</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Poppins">Poppins</option>
+                    </select><br>
+                    <label for="dark">Configure Theme</label>
+                    <button type="submit" id="dark">Dark Mode</button>
+                    <button type="submit" value="Default" id="default">Default</button>
+                </section>`;
+
+                const fontDrop = content3.querySelector(".fontSelect");
+
+                const head3 = gallery3.querySelector("h3");
+                const para = gallery3.querySelector("p");
+                const listElement = gallery3.querySelector("ul");
+
+                fontDrop.addEventListener("click", function(event){
+                    event.stopPropagation(); 
+
+                    head3.style.fontFamily = this.value;
+                    para.style.fontFamily = this.value;
+                    listElement.style.fontFamily = this.value;
+                });
+
+                const darkbtn = content3.querySelector("#dark");
+                const overlay = gallery3.querySelector(".overlay");
+
+                darkbtn.addEventListener("click", function(event){
+                    event.stopPropagation();
+
+                    overlay.style.backgroundColor = "#00171f";
+                });
+
+                const defaultbtn = content3.querySelector("#default");
+
+                defaultbtn.addEventListener("click", function(){
+                    event.stopPropagation();
+
+                    overlay.style.backgroundColor = "transparent";
+                });
+            }else{
+                content3.innerHTML = `
+                <h2>Show More on</h2>
+                <h3>Sustainable Fishing</h3>`;
+                gallery3.style.width = "50%";
+            }
+        });
+
+    </script>
+
+    <script>
+        const gallery4 = document.querySelector(".contentbox:nth-child(4)");
+        const background4 = gallery4.querySelector(".background");
+        const content4 = gallery4.querySelector(".contentboxContent");
+        background.style.filter= "none";
+        background.style.opacity= "1";
+        gallery4.addEventListener("click", function(){
+            this.classList.toggle("contentboxExpanded");
+            if(this.classList.contains("contentboxExpanded")){
+                gallery4.style.width = "95%";
+                content4.innerHTML=`
+                <section class="expandedContent">
+                    <h3>Community Actions for Ocean Protection</h3>
+                    <p>Protecting marine environments requires collective effort from individuals, communities, and governments. Conservation initiatives aim to restore ecosystems, reduce human impact, 
+                        and promote sustainable practices, while expecting the community itself to have responsible individuals. </p>
+                    <ul>
+                        <li>Beach cleanup campaigns</li>
+                        <li>Environmental education programs</li>
+                        <li>Reducing plastic usage</li>
+                    </ul>
+                <label for="selected">Customize the Font Style</label>
+                    <select class="fontSelect" id="selected">
+                        <option value="Georgia">Default (Georgia)</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Poppins">Poppins</option>
+                    </select><br>
+                    <label for="dark">Configure Theme</label>
+                    <button type="submit" id="dark">Dark Mode</button>
+                    <button type="submit" value="Default" id="default">Default</button>
+                </section>`;
+
+                const fontDrop = content4.querySelector(".fontSelect");
+
+                
+                const head3 = gallery4.querySelector("h3");
+                const para = gallery4.querySelector("p");
+                const listElement = gallery4.querySelector("ul");
+
+                fontDrop.addEventListener("click", function(event){
+                    event.stopPropagation(); 
+
+                    head3.style.fontFamily = this.value;
+                    para.style.fontFamily = this.value;
+                    listElement.style.fontFamily = this.value;
+                });
+
+                const darkbtn = content4.querySelector("#dark");
+                const overlay = gallery4.querySelector(".overlay");
+
+                darkbtn.addEventListener("click", function(event){
+                    event.stopPropagation();
+
+                    overlay.style.backgroundColor = "#00171f";
+                });
+
+                const defaultbtn = content4.querySelector("#default");
+
+                defaultbtn.addEventListener("click", function(){
+                    event.stopPropagation();
+
+                    overlay.style.backgroundColor = "transparent";
+                });
+
+            }else{
+                content4.innerHTML = `
+                <h2>Show More on</h2>
+                <h3>Conservation Efforts</h3>`;
+                gallery4.style.width = "50%";
+            }
+        });
+
+    </script>
+
+</body>
+</html>

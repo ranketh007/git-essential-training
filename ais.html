@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SDG 14 - Action Impact Simulator</title>
+<link rel="stylesheet" href="Global.css">
+<style>
+
+/* Body */
+body {
+margin:0;
+padding:0;
+font-family: Arial, sans-serif;
+background-color:#020d1a;
+background-image:url(resources/fish.jpg);
+background-size:cover;
+background-position:center;
+transition:background-image 0.5s ease;
+background-attachment:fixed;
+color:#e8f4fd;
+}
+
+/* Navigation */
+.navbar {
+background-color:#0a2a4a;
+padding:20px 36px;
+border-bottom:2px solid #1a7fc4;
+}
+
+.navbar a {
+color:#a8d8f0;
+text-decoration:none;
+font-size:14px;
+margin-right:20px;
+}
+
+.navbar a:hover {
+color:#5bb8f5;
+}
+
+.navbar a.active {
+color:#5bb8f5;
+font-weight:bold;
+border-bottom:2px solid #5bb8f5;
+}
+
+/* Grid */
+.card-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 16px;
+margin: 20px 30px;
+max-width: 720px;
+}
+
+/* Cards */
+.card {
+background-color:#0a2a4a;
+border:2px solid #1a7fc4;
+border-radius:8px;
+padding:16px;
+text-align:center;
+cursor:pointer;
+background-size:cover;
+background-position:center;
+position:relative;
+overflow:hidden;
+}
+
+/* Overlay */
+.card::before {
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+z-index:1;
+}
+
+/* Keep text above overlay */
+.card * {
+position:relative;
+z-index:2;
+}
+
+/* Selected */
+.card.selected {
+border-color:#5bb8f5;
+}
+
+/* Hover */
+.card:hover {
+transform:scale(1.03);
+transition:0.3s;
+}
+
+/* Card Background Images */
+.card1 { background-image:url(resources/ZeroWaste.jpg); }
+.card2 { background-image:url(resources/public.jpg); }
+.card3 { background-image:url(resources/secondhand.jpg); }
+.card4 { background-image:url(resources/cleanbeach.jpg); }
+.card5 { background-image:url(resources/energy.jpg); }
+.card6 { background-image:url(resources/awareness.jpg); }
+
+/* Points badge */
+.points {
+background:#0d4f8c;
+padding:4px 10px;
+border-radius:12px;
+font-size:12px;
+}
+
+/* Feedback */
+.feedback {
+background-color:#0a2a4a;
+border:1px solid #1a7fc4;
+border-radius:8px;
+padding:20px;
+margin:20px 30px;
+}
+
+/* Button */
+.btn {
+background:#0d4f8c;
+color:white;
+border:1px solid #1a7fc4;
+padding:10px 24px;
+cursor:pointer;
+margin:0 30px;
+}
+
+.btn:hover {
+background:#1a7fc4;
+}
+
+/* Footer */
+.footer {
+background:#0a2a4a;
+text-align:center;
+padding:16px;
+font-size:12px;
+margin-top:40px;
+border-top:2px solid #1a7fc4;
+}
+
+.footer a {
+color:#5bb8f5;
+text-decoration:none;
+}
+
+h1 { margin:20px 30px; }
+h3 { font-size:15px; }
+
+</style>
+</head>
+
+<body>
+
+<!-- Navigation bar -->
+<header>
+        <img src="resources/logo.png" alt="Site Logo" width="330" height="40">
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="ais.html" class="active">&nbsp; AIS &nbsp;</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="userprofile.html">User Profile</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+        </nav>
+</header>
+
+<h1>Pick Your Actions</h1>
+
+<p style="margin:0 30px 20px 30px;">
+Select actions below to see how much difference you can make for our oceans.
+</p>
+
+<!-- Feedback section -->
+<div class="feedback">
+<h2>Your Impact Summary</h2>
+<p>Selected actions: <b id="selectedCount">0</b></p>
+<p>Impact score: <b id="totalScore">0</b></p>
+<p>Impact level: <b id="impactLevel">—</b></p>
+<p id="impactMessage"></p>
+</div>
+
+<button class="btn" onclick="resetAll()">Reset</button>
+
+<br><br>
+
+<!-- Action Smulation card -->
+<div class="card-grid">
+
+<div class="card card1" id="card1" onclick="toggleCard('card1',3)">
+<h3>Reduce Food Waste</h3>
+<p>Plan meals and reduce waste.</p>
+<br>
+<span class="points">Impact 3</span>
+</div>
+
+<div class="card card2" id="card2" onclick="toggleCard('card2',2)">
+<h3>Use Public Transport</h3>
+<p>Reduce carbon emissions.</p>
+<br>
+<span class="points">Impact 2</span>
+</div>
+
+<div class="card card3" id="card3" onclick="toggleCard('card3',2)">
+<h3>Buy Second-Hand</h3>
+<p>Reduce fashion pollution.</p>
+<br>
+<span class="points">Impact 2</span>
+</div>
+
+<div class="card card4" id="card4" onclick="toggleCard('card4',4)">
+<h3>Volunteer Locally</h3>
+<p>Join beach cleanups.</p>
+<br>
+<span class="points">Impact 4</span>
+</div>
+
+<div class="card card5" id="card5" onclick="toggleCard('card5',3)">
+<h3>Conserve Energy</h3>
+<p>Reduce carbon footprint.</p>
+<br>
+<span class="points">Impact 3</span>
+</div>
+
+<div class="card card6" id="card6" onclick="toggleCard('card6',1)">
+<h3>Share Awareness</h3>
+<p>Encourage others.</p>
+<br>
+<span class="points">Impact 1</span>
+</div>
+
+</div>
+
+<footer>
+        <img src="resources/logofooter.png" alt="Site Logo" width="300" height="70"><br>
+
+        <div class="footcols">
+            <h4>Piragatheesan Kumaresan | </h4>
+            <a href="validation_ST2.html">Validation Page</a>
+            <a href="pageEditor_ST2.html">Page Editor</a>
+        </div>
+</footer>
+
+
+<!--JavaScript for the impact-->
+<script>
+var selected = {};
+
+var bgLow = "red";
+var bgMedium = "yellow";
+var bgHigh = "green";
+var bgReset = "url('images/fish.jpg')";
+
+function toggleCard(cardId,points){
+
+var card = document.getElementById(cardId);
+
+if(selected[cardId]){
+delete selected[cardId];
+card.className="card "+cardId;
+}else{
+selected[cardId]=points;
+card.className="card "+cardId+" selected";
+}
+
+updateFeedback();
+}
+
+function updateFeedback(){
+
+var count=0;
+var total=0;
+
+for(var key in selected){
+count++;
+total+=selected[key];
+}
+
+document.getElementById("selectedCount").innerHTML=count;
+document.getElementById("totalScore").innerHTML=total;
+
+if(total===0){
+
+document.getElementById("impactLevel").innerHTML="—";
+document.getElementById("impactMessage").innerHTML="";
+document.body.style.backgroundImage=bgReset;
+
+}
+else if(total<=5){
+
+document.getElementById("impactLevel").innerHTML="Low";
+document.getElementById("impactMessage").innerHTML="Good start!";
+document.body.style.backgroundImage="none";
+document.body.style.backgroundColor=bgLow;
+
+}
+else if(total<=11){
+
+document.getElementById("impactLevel").innerHTML="Medium";
+document.getElementById("impactMessage").innerHTML="Well done!";
+document.body.style.backgroundImage="none";
+document.body.style.backgroundColor=bgMedium;
+
+}
+else{
+
+document.getElementById("impactLevel").innerHTML="High";
+document.getElementById("impactMessage").innerHTML="Excellent impact!";
+document.body.style.backgroundImage= "none";
+document.body.style.backgroundColor=bgHigh;
+
+}
+
+}
+function resetAll(){
+selected={};
+var cards=document.getElementsByClassName("card");
+
+for(var i=0;i<cards.length;i++){
+cards[i].classList.remove("selected");
+}
+updateFeedback();
+}
+
+</script>
+
+</body>
+</html>

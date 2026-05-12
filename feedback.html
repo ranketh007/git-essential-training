@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial scale=1.0">
+        <title>Feedback & program directory</title>
+        <link rel="stylesheet" href="Global.css">
+        <style>
+
+            ::-webkit-scrollbar{
+                width: 10px;
+            }
+
+            ::-webkit-scrollbar-track{
+                background: #00171f;
+            }
+
+            ::-webkit-scrollbar-thumb{
+                background: linear-gradient(#00a8e8, #003459);
+                border-radius: 10px;
+            }
+
+            ::-webkit-scrollbar-thumb:hover{
+                background: #007ea7;
+            }
+
+            .bg-image{
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+
+                background-image: url(background.jpg);
+                background-size: cover;
+                background-position: center;
+
+                z-index: -1;
+            }
+
+            main{
+                margin-top: 0px;
+            }
+
+            .title-feedback{
+                font-family: poppins;
+                color: white;
+                text-align: center;
+                font-size: 60px;
+                margin-top: 0px;
+            }
+
+            .programs{
+                display: flex;
+                gap: 20px;
+                overflow-x: auto;
+                padding: 20px;
+            }
+
+            .program-card{
+                min-width: 300px;
+                text-align: center;
+                border-radius: 15px;
+                transition: 0.3s;
+            }
+
+            .program-card:hover{
+                transform: scale(1.05);
+                
+            }
+
+            .program-card img{
+                width: 100%;
+                height: auto;
+                float: none;
+                border-radius: 10px;
+            }
+
+            .program-card button{
+                background: linear-gradient(#00a8e8, #003459);
+                border: none;
+                padding: 10px;
+                color: white;
+                border-radius: 20px;
+                cursor: pointer;
+            }
+
+            .program-card button:hover{
+                background: #007ea7;
+            }
+
+            .section-review{
+                margin: 40px 5%;
+            }
+
+            .review{
+                background: linear-gradient(#003459, #00171f);
+                color: white;
+                padding: 15px;
+                border-radius: 15px;
+                margin-bottom: 15px;
+            }
+
+            .rating{
+                font-size: 30px;
+                color: #00a8e8;
+            }
+
+            form{
+                margin: 40px 5%;
+                background: linear-gradient(rgba(0,52,89,0.8), rgba(0,23,31,0.9));
+                padding: 25px;
+                border-radius: 20px;
+                color: white;
+                font-family: poppins;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            }
+
+            label{
+                font-weight: bold;
+            }
+
+            input, textarea, select{
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+                margin-bottom: 15px;
+                border-radius: 10px;
+                border: none;
+                outline: none;
+            }
+
+            input:focus, textarea:focus, select:focus{
+                box-shadow: 0 0 8px #00a8e8;
+            }
+
+            button[type="submit"]{
+                width: auto;
+                background: linear-gradient(#00a8e8, #003459);
+                color: white;
+                border: none;
+                padding: 8px 20px;
+                border-radius: 25px;
+                cursor: pointer;
+                font-size: 16px;
+                transition: 0.3s;
+            }
+
+            button[type="submit"]:hover{
+                background: #007ea7;
+                transform: scale(1.03);
+            }
+
+            .error{
+                color: #ff6b6b;
+                font-size: 12px;
+            }
+
+            .singletag{
+                color: white !important;
+            }
+
+            .filter-bar{
+                display: flex;
+                justify-content: flex-end;
+                margin-right: 40px;
+                margin-top: 10px;
+                color: white;
+                font-family: poppins;
+            }
+
+            .filter-bar select{
+                margin-left: 10px;
+                padding: 5px 12px;
+                border-radius: 15px;
+                border: none;
+                background: linear-gradient(#00a8e8, #003459);
+                color: black;
+                
+                
+            }
+
+            #successMsg{
+                text-align: center;
+                margin-top: 20px;
+                color: #00ffcc;
+                font-family: poppins;
+                font-size: 18px;
+                background: rgba(0, 0, 0, 0.6);
+                padding: 10px;
+                border-radius: 10px;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <header>
+            <section class="bg-image"></section>
+            <img src="resources/logo.png" alt="Site Logo" width="330" height="40">
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="ais.html">&nbsp;AIS &nbsp;</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="userprofile.html">User Profile</a></li>
+                    <li><a href="feedback.html" class="active">Feedback</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h1 class="title-feedback">Programs & Opportunities</h1>
+
+            <div class="filter-bar">
+                <label for="sort">Sort by:</label>
+                <select id ="sort">
+                    <option>Most Popular</option>
+                    <option>Nearest</option>
+                    <option>Latest</option>
+                </select>
+            </div>
+
+            <div class="programs">
+                <section class="card program-card">
+                    <img src="resources/cleanbeach.jpg" alt="Beach Cleanup">
+                    <h2>Beach Cleanup</h2>
+                    <p>Join local volunteers to clean beaches.</p>
+                    <button>Join Us</button>
+                </section>
+
+                <section class="card program-card">
+                    <img src="resources/awareness.jpg" alt="Ocean Awareness">
+                    <h2>Ocean Awareness</h2>
+                    <p>Spread awareness about marine life.</p>
+                    <button>Learn More</button>
+                </section>
+
+                <section class="card program-card">
+                    <img src="resources/protectcoral.jpg" alt="Coral Protection">
+                    <h2>Coral Protection</h2>
+                    <p>Help restore coral reefs.</p>
+                    <button>Join Us</button>
+                </section>
+
+                <section class="card program-card">
+                    <img src="resources/plasticless.jpg" alt="Plastic Reduction">
+                    <h2>Plastic Reduction</h2>
+                    <p>Reduce plastic waste globally.</p>
+                    <button>Join Us</button>
+                </section>
+            </div>
+
+            <div class="section-review">
+                <h3 class="singletag">Ratings & Reviews</h3>
+
+                <p class="rating">9.7/10 Excellent (167+ reviews)</p>
+
+                <div class="review">
+                    <h3>Great initiative</h3>
+                    <p>Very impactful program and it was so engaging to participate in this with the community as such. <a href="#">See more</a></p>
+                    <p>John / 2026</p>
+                    <p>9/10</p>
+                </div>
+
+                <div class="review">
+                    <h3>Well organized</h3>
+                    <p>Enjoyed participating and the program was so well organized, everyone was treated with respect. <a href="#">See more</a></p>
+                    <p>Anna / 2026</p>
+                    <p>9/10</p>
+                </div>
+
+                <div class="review">
+                    <h3>Good experience</h3>
+                    <p> I would totally recommend this program to anyone who is willing to join. Its very satisfying to know that I was able to make a positive impact towards something.<a href="#">See more</a></p>
+                    <p>David / 2026</p>
+                    <p>10/10</p>
+                </div>
+            </div>
+
+            <h2 class="singletag">Submit your Feedback</h2>
+
+            <form id="feedbackForm">
+
+                <fieldset>
+                    <legend>Personal Details</legend>
+
+                    <label>Full Name:</label>
+                    <input type="text" id="name">
+                    <span class="error" id="nameError"></span>
+
+                    <label>Email:</label>
+                    <input type="text" id="email">
+                    <span class="error" id="emailError"></span>
+
+                    <label>Telephone:</label>
+                    <input type="tel" id="phone">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Feedback Details</legend>
+
+                    <label>Address:</label>
+                    <textarea id="message" maxlength="150"></textarea>
+                    <p>Remaining characters: <span id="charCount">150</span></p>
+
+                    <label>Category:</label>
+                    <select id="category">
+                        <option value="">Select</option>
+                        <option>General</option>
+                        <option>Programs</option>
+                        <option>Website</option>
+                    </select>
+
+                    <span class="error" id="categoryError"></span>
+
+                    <label>Date of Submission:</label>
+                    <input type="date" id="date">
+
+                    <label>Participated Date & Time:</label>
+                    <input type="datetime-local" id="datetime">
+
+                </fieldset>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+
+            <p id="successMsg"></p>
+            <div id="userOutput"></div>
+
+        </main>
+
+    <footer>
+        <img src="resources/logofooter.png" alt="Site Logo" width="300" height="70"><br>
+
+        <div class="footcols">
+            <h4>Prabash Tharinda | </h4>
+            <a href="validation_ST1.html">Validation Page</a>
+            <a href="pageEditor_ST1.html">Page Editor</a>
+        </div>
+    </footer>
+
+    <script>
+        let message = document.getElementById("message");
+        let charCount = document.getElementById("charCount");
+
+        message.addEventListener("input", function(){
+            let remaining = 150 - message.value.length;
+            charCount.textContent = remaining;
+        });
+
+        document.getElementById("feedbackForm").addEventListener("submit" , function(e){
+            e.preventDefault();
+
+            let valid = true;
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let category = document.getElementById("category").value;
+
+            if(name === ""){
+                document.getElementById("nameError").textContent = "Name is required";
+                valid = false;
+            }else{
+                document.getElementById("nameError").textContent = "";
+            }
+
+            if(email === ""){
+                document.getElementById("emailError").textContent = "Email is required";
+                valid = false;
+            } else if (!email.includes("@")){
+                document.getElementById("emailError").textContent = "Enter a valid email";
+                valid = false;
+            }else{
+                document.getElementById("emailError").textContent = "";
+            }
+
+            if(category === ""){
+                document.getElementById("categoryError").textContent = "Please select a category";
+                valid = false;
+            }else{
+                document.getElementById("categoryError").textContent = "";
+            }
+
+            if(valid){
+
+                let userMessage = message.value;
+                document.getElementById("successMsg").textContent = "Thank you! Your feedback has been submitted.";
+
+                document.getElementById("userOutput").innerHTML=`
+                    <h3>Your Submitted Details:</h3>
+                    <p><strong>Name:</strong> ${name}</p>
+                    <p><strong>Email:</strong> ${email}</p>
+                    <p><strong>Catergory:</strong> ${category}</p>
+                    <p><strong>Message:</strong> ${message.value}</p>
+                `;
+                
+                document.getElementById("feedbackForm").reset();
+                charCount.textContent = 150;
+            }
+        });
+    </script>
+    </body>
+</html>

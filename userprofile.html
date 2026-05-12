@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>User Profile</title>
+<link rel="stylesheet" href="Global.css">
+
+<style>
+    .container {
+        height: 73.5vh;
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-bottom: 20px;
+        background: linear-gradient(#003459, #00a8e8);
+        color: white;
+        font-family: poppins;
+        border-radius: 10px;
+    }
+
+    .container h1, .container h2, .container p, .container h3{
+        padding-left: 2%;
+        margin-top: 0;
+    }
+
+    button {
+        padding-bottom: 10px;
+        padding-top: 10px;
+        margin-left: 2%;
+        margin-top: 0;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .progress-bar {
+        width: 95%;
+        padding-left: 2%;
+        background: #ccc;
+        border-radius: 10px;
+        margin-left: 2%;
+        margin-top: 0;
+    }
+
+    .progress {
+        height: 20px;
+        width: 0%;
+        background: #00171f;
+        border-radius: 10px;
+        text-align: center;
+        color: white;
+        margin-top: 0;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="resources/logo.png" width="330" height="40" alt="site logo">
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="ais.html">AIS</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="userprofile.html" class="active">User Profile</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+<div class="container">
+
+    <h1>User Profile Builder</h1>
+
+    <div class="progress-bar">
+        <div class="progress" id="progress">0%</div>
+    </div>
+
+    <p id="stepStatus">Step 0 of 3 completed</p>
+
+    <button onclick="startStep(1)">Step 1: Basic Information</button><br>
+    <button onclick="startStep(2)">Step 2: Your Interests</button><br>
+    <button onclick="startStep(3)">Step 3: Achievable Goals</button>
+
+    <h2>Profile Output</h2>
+    <div id="profileOutput">
+        <p id="basic" class="hidden"></p>
+        <p id="interests" class="hidden"></p>
+        <p id="goals" class="hidden"></p>
+    </div>
+<h3>See Info</h3>
+</div>
+</main>
+
+<script>
+let profile = {
+    name: "",
+    role: "",
+    country: "",
+    interest1: "",
+    interest2: "",
+    sdgAction: "",
+    goal: "",
+    commitment: ""
+};
+
+let completedSteps = [false, false, false];
+
+function startStep(step) {
+
+    if (step === 1) {
+        profile.name = prompt("Enter your name:") || profile.name;
+        profile.role = prompt("Enter your role (e.g. student):") || profile.role;
+        profile.country = prompt("Enter your country:") || profile.country;
+
+        if (profile.name || profile.role || profile.country) {
+            completedSteps[0] = true;
+            document.getElementById("basic").classList.remove("hidden");
+            document.getElementById("basic").innerHTML =
+                `<strong>Basic Info:</strong> ${profile.name || ""} ${profile.role || ""} ${profile.country || ""}`;
+        }
+    }
+
+    if (step === 2) {
+        profile.interest1 = prompt("Enter one interest:") || profile.interest1;
+        profile.interest2 = prompt("Enter another interest:") || profile.interest2;
+        profile.sdgAction = prompt("What action do you take to protect oceans?") || profile.sdgAction;
+
+        if (profile.interest1 || profile.interest2 || profile.sdgAction) {
+            completedSteps[1] = true;
+            document.getElementById("interests").classList.remove("hidden");
+            document.getElementById("interests").innerHTML =
+                `<strong>Interests:</strong> ${profile.interest1}, ${profile.interest2} | Action: ${profile.sdgAction}`;
+        }
+    }
+
+    if (step === 3) {
+        profile.goal = prompt("What is your environmental goal?") || profile.goal;
+        profile.commitment = prompt("How will you contribute?") || profile.commitment;
+        let extra = prompt("Any additional note?");
+
+        if (profile.goal || profile.commitment || extra) {
+            completedSteps[2] = true;
+            document.getElementById("goals").classList.remove("hidden");
+            document.getElementById("goals").innerHTML =
+                `<strong>Goals:</strong> ${profile.goal} | Commitment: ${profile.commitment}`;
+        }
+    }
+
+    updateProgress();
+}
+
+function updateProgress() {
+    let count = completedSteps.filter(x => x).length;
+    let percent = (count / 3) * 100;
+
+    document.getElementById("progress").style.width = percent + "%";
+    document.getElementById("progress").innerText = percent + "%";
+    document.getElementById("stepStatus").innerText = `Step ${count} of 3 completed`;
+}
+</script>
+
+<footer>
+        <img src="resources/logofooter.png" alt="Site Logo" width="300" height="70"><br>
+
+        <div class="footcols">
+            <h4>Miththtujan Niranjan | </h4>
+            <a href="validation_ST4.html">Validation Page</a>
+            <a href="pageEditor_ST4.html">Page Editor</a>
+        </div>
+</footer>
+</body>
+</html>

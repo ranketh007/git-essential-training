@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Former and Ongoing Targets</title>
+    <link rel="stylesheet" href="Global.css">
+    <style>
+
+        .contentPageBtn{
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+
+            background: linear-gradient(#00a8e8, #003459);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: poppins;
+
+            box-shadow: 0.5px 15px rgba(0, 0, 0, 0.5);
+            transition: 0.3s;
+            z-index: 1000;
+            margin-top: 0;
+        }
+
+        .contentPageBtn:hover{
+            background: #007ea7;
+            transform: scale(1.1);
+        }
+
+        .bg-image{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            background-image: url(background.jpg);
+            background-size: cover;
+            background-position: center;
+
+            z-index: -1;
+        }
+
+        .contentPage{
+            margin-top: 0px;
+            text-align: center;
+        }
+
+        .contentPage ol{
+            list-style: none;
+            padding: 0;
+            margin-top: 0;
+        }
+
+        .contentPage ol li{
+            display: inline-block;
+            margin-left:  10px;
+            margin-right: 10px
+        }
+
+        .contentPage a{
+            text-decoration: none;
+            color: white;
+            font-family: poppins;
+            background: linear-gradient(#00a8e8, #003459);
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .contentPage a:hover{
+            background: #007ea7;
+        }
+
+        #content, #content2, #content3, #content4{
+            padding: 25px;
+            background: linear-gradient(rgba(0,52,89,0.85), rgba(0,23,31,0.9));
+            border: 2px solid #00a8e8;
+            margin: 20px 2%;
+            border-radius: 20px;
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            transition: 0.3s;
+        }
+
+        #content:hover, #content2:hover, #content3:hover, #content4:hover{
+            transform: scale(1.01);
+        }
+
+        #content p, #content2 p, #content3 p, #content4 p{
+        color: white;
+        font-family: poppins;
+        border: 0;
+        }
+
+        #content img, #content2 img, #content3 img, #content4 img{
+            width: 45%;
+            height: 300px;
+            margin: 2%;
+            border-radius: 15px;
+            object-fit: cover;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px){
+            #content img, content2 img, #content3 img, #content4 img{
+                width: 90%;
+                height: auto;
+            }
+        }
+
+        #content img:hover, #content2 img:hover, #content3 img:hover, #content4 img:hover{
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+
+        #content h1, #content2 h1, #content3 h1, #content4 h1{
+            font-family: poppins;
+            text-align: center;
+            color: white;
+            margin-top: 0px;
+        }
+
+        #content h2, #content h3,#content2 h2, #content2 h3, #content3 h2, #content3 h3, #content4 h2, #content4 h3{
+            text-align: center;
+            font-family: poppins;
+            color: white;
+            font-size: 20px;
+        }
+
+        #content ul, #content2 ul, #content3 ul, #content4 ul{
+            margin-top: 0px;
+            list-style: circle;
+        }
+
+        #content  ul li, #content2 ul li, #content3 ul li, #content4 ul li{
+            color: white;
+        }
+
+        .highlight{
+            color: #00a8e8;
+            font-weight: bold;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <!--Header Tag Content- Not to be Edited-->
+    <header>
+        <section class="bg-image"></section>
+        <img src="resources/logo.png" alt="Site Logo" width="330" height="40">
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="ais.html">&nbsp; AIS &nbsp;</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="userprofile.html">User Profile</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <a href="#content" class="contentPageBtn">Go to Top</a>
+    <main>
+    <div class="contentPage">
+        <nav>
+            <ol>
+                <li><a href="#content">Marine Pollution</a></li>
+                <li><a href="#content2">Overfishing</a></li>
+                <li><a href="#content3">Coral Reef Protection</a></li>
+                <li><a href="#content4">Sustainable Ocean Future</a></li>
+            </ol>
+        </nav>
+    </div>
+    <section id="content">
+        <h1>Marine Pollution</h1>
+        <h2>Understanding the Impact of Ocean Pollution</h2>
+        <h3>Explore how pollution affects marine ecosystems and human life</h3>
+
+        <p>
+            Marine pollution is one of the most urgent challenges addressed under
+            <span class="highlight">Sustainable Development Goal 14 - Life Below Water</span>
+            Millions of tons of plastic waste enter the oceans annually, harming marine species
+            amd disrupting ecosystems.
+        </p>
+
+        <p>
+            Most marine pollution originates from land-based sources such as improper waste
+            and industrial activities. Addressing this issue requires global cooperation and 
+            responsible consumption habits.
+        </p>
+
+        <ul>
+            <li>Plastic waste harms marine animals and ecosystems.</li>
+            <li>Pollution affects food chains and human health.</li>
+            <li>Waste management plays a key role in prevention</li>
+        </ul>
+
+        <img src="resources/marinepollution.jpg" alt="An image of marine pollution">
+
+    </section>
+
+    <section id="content2">
+        <h1>Overfishing</h1>
+        <h2>The Threat to Marine Life and Food Security</h2>
+        <h3>Learn why Sustainable fishing is essential for the future</h3>
+
+        <p>
+            Overfishing is a major threat to marine biodiversity and global food supply.
+            Unsustainable fishing practices reduce fish populations faster than they can recover.
+        </p>
+
+        <p>
+            Illegal and unregulated fishing further damages marine ecosystems. SDG 14 promotes
+            responsible fishing methods to ensure long-term sustainability.
+        </p>
+
+        <ul>
+            <li>Depletes fish rapidly.</li>
+            <li>Disrupts marine ecosystems balance.</li>
+            <li>Threatens livelihood of fishing communities.</li>
+        </ul>
+
+        <img src="resources/overfishing.jpg" alt="An image of extensive overfishing">
+    </section>
+        
+
+    <section id="content3">
+       <h1>Coral Reef Protection</h1>
+       <h2>Preserving Marine Biodiversity</h2>
+       <h3>Discover the importance of coral reefs in ocean ecosystems</h3>
+
+       <p>
+        Coral Reefs are essential ecosystems that support a wide variety of marine life
+        However, They are under threat due to climate change, pollution, and ocean acidification.
+       </p>
+
+       <p>
+        Rising sea temperatures cause coral bleaching, leading to the destruction of reef systems.
+        Protecting reefs is crucial for biodiversity and coastal protection.
+       </p>
+
+       <ul>
+            <li>Coral reefs support thousands of marine species</li>
+            <li>Climate change leads to coral bleaching</li>
+            <li>Reefs protect coastal areas from storms</li>
+       </ul>
+
+       <img src="resources/coralreef.jpg" alt="An image of coral reefs">
+    </section>
+
+    <section id="content4">
+        <h1>Sustainable Ocean Future</h1>
+        <h2>Building a Better Future for Our Oceans</h2>
+        <h3>Understand how individuals and communities can contribute</h3>
+
+        <p>
+            Achieving a Sustainable ocean future requires global cooperation and responsibilites.
+            SDG 14 encourages conservation and sustainable use of marine resources.
+        </p>
+
+        <p>
+            Individuals can make a difference by reducing plastic use, supporting sustainable seafood,
+            and participating in environmental initiatives.
+        </p>
+
+        <ul>
+            <li>Reduce single-use plastics</li>
+            <li>Support sustainable fishing practices</li>
+            <li>Participate in consevation programs</li>
+        </ul>
+
+        <img src="resources/sustainable.jpg" alt="An image of a sustainable ocean">
+    </section>
+
+    </main>
+
+    <footer>
+        <img src="resources/logofooter.png" alt="Site Logo" width="300" height="70"><br>
+
+        <div class="footcols">
+            <h4>Prabash Tharinda | </h4>
+            <a href="validation_ST3.html">Validation Page</a>
+            <a href="pageEditor_ST3.html">Page Editor</a>
+        </div>
+    </footer>
+</body>
+</html>
