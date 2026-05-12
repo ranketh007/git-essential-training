@@ -1,22 +1,23 @@
-/*Html and Body Structure not to be changed*/
-html, body{
+/*Html and Body Structure not to be changed --UPDATED */
+html,
+body {
     height: 100%;
     margin: 0;
 }
 
-body{
+body {
     font-family: poppins;
 }
 
-header img{
+header img {
     float: left;
     margin-top: 2px;
     padding-left: 1%;
 }
 
 /*Navigation Bar Properties*/
-nav ul{
-    list-style: none; 
+nav ul {
+    list-style: none;
     background-color: #00171f;
     margin-top: 0;
     margin-bottom: 0;
@@ -25,58 +26,62 @@ nav ul{
     padding-left: 0;
     padding-bottom: 0;
     padding-top: 0;
-    }
+}
 
-nav ul li{
+nav ul li {
     display: inline-block;
     padding-right: 2.5%;
 }
 
-nav ul li a{
+nav ul li a {
     display: block;
     padding: 14px;
-    text-decoration: none; 
+    text-decoration: none;
     color: #00a8e8;
     font-size: medium;
     transition: 0.3s;
 }
-nav ul li a:hover{
+
+nav ul li a:hover {
     color: #ffffff;
     background: linear-gradient(#00a8e8, #003459);
 }
 
-.active{text-decoration: underline;}
+.active {
+    text-decoration: underline;
+}
 
 /*Other Element Properties*/
-main{
+main {
     background-color: #00171f;
     margin-top: 0;
     margin-bottom: 0;
     padding-top: 0;
 }
 
-img{
+img {
     max-width: 100%;
 }
 
 /*Section card properties in the 'main' section*/
-.card{
+.card {
     padding-left: 2%;
     padding-right: 2%;
-    background:linear-gradient(#003459, #00a8e8);
+    background: linear-gradient(#003459, #00a8e8);
     border: 2px solid #00a8e8;
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 1%;
     margin-right: 1%;
 }
-.card ul li{
+
+.card ul li {
     color: #003459;
     padding-left: 350px;
     list-style-position: inside;
 }
 
-.card ul li:first-child{
+.card ul li:first-child {
     background-color: #00a8e8;
     display: inline-block;
     list-style: none;
@@ -85,14 +90,14 @@ img{
 }
 
 
-.card img{
+.card img {
     width: 300px;
     height: 200px;
     float: left;
     border: 1px solid white;
 }
 
-#cardp{
+#cardp {
     color: white;
     font-family: poppins;
     padding-left: 350px;
@@ -101,7 +106,7 @@ img{
 }
 
 /*Additional ID to ensure that paragraphs in card 3 wont provide a duplication error */
-#cardp3{
+#cardp3 {
     color: white;
     font-family: poppins;
     padding-left: 350px;
@@ -110,15 +115,15 @@ img{
 }
 
 
-.card h2{
+.card h2 {
     font-family: poppins;
     color: #ffffff;
 }
 
-.card2{
+.card2 {
     padding-left: 2%;
     padding-right: 2%;
-    background:linear-gradient(#00171f, #007ea7);
+    background: linear-gradient(#00171f, #007ea7);
     border: 2px solid #003459;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -126,22 +131,23 @@ img{
     margin-right: 1%;
 }
 
-.card2 ul li{
+.card2 ul li {
     color: #ffffff;
     list-style-position: inside;
 }
 
-.card2 h2{
+.card2 h2 {
     font-family: poppins;
     color: #00a8e8;
 }
-.card2 ul li:first-child{
+
+.card2 ul li:first-child {
     display: inline-block;
     background-color: #007ea7;
     list-style: none;
 }
 
-#cardp2{
+#cardp2 {
     color: #00a8e8;
     font-family: poppins;
     padding-right: 400px;
@@ -150,7 +156,7 @@ img{
 }
 
 
-.card2 img{
+.card2 img {
     width: 300px;
     height: 200px;
     float: right;
@@ -158,7 +164,7 @@ img{
     margin-bottom: 5%;
 }
 
-.contentPageBtn{
+.contentPageBtn {
     text-align: center;
     color: #00171f;
     background-color: #00a8e8;
@@ -168,36 +174,36 @@ img{
     text-decoration: none;
 }
 
-.contentPageBtn:hover{
+.contentPageBtn:hover {
     cursor: pointer;
     color: #00a8e8;
     background-color: #00171f;
 }
 
-.contentPage nav ol{
+.contentPage nav ol {
     list-style: none;
     margin-left: 15%;
     margin-top: 0;
 }
 
-.contentPage nav ol li{
+.contentPage nav ol li {
     display: inline-block;
     margin-left: 2%;
 }
 
-.contentPage nav ol li a{
+.contentPage nav ol li a {
     text-decoration: none;
     color: #00171f;
     background-color: #00a8e8;
     font-family: Georgia;
 }
 
-hr{
+hr {
     color: white;
 }
 
 /*Footer Properties*/
-footer{
+footer {
     background-color: #00171f;
     padding-bottom: 5px;
     margin-bottom: 0;
@@ -205,19 +211,19 @@ footer{
 
 }
 
-.footcols{
+.footcols {
     display: flex;
     gap: 50px;
 }
 
-.footcols h4{
+.footcols h4 {
     color: #00a8e8;
     padding-bottom: 8px;
     padding-top: 1%;
     margin-left: 5%;
 }
 
-.footcols a{
+.footcols a {
     color: #00a8e8;
     padding-bottom: 8px;
     padding-top: 2.8%;
@@ -226,7 +232,7 @@ footer{
 }
 
 
-footer img{
+footer img {
     float: left;
     padding-top: 1%;
     margin-left: 2%;
